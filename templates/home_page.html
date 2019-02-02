@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <style type="text/css">
+        .error {
+        color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        <a href="/">Signup</a>
+    </h1>
+    <form action="/home" method="POST">
+    <label for="User_Name"> User Name
+        <input id="User_Name" type="text" name="User_Name" value="{{username}}"/>
+    </label>
+        <p class="error">{{username_error}}</p>
+
+    <label for="Password"> Password
+        <input id="Password" type="Password" name="Password" value="{{password}}"/><br><br>
+    </label>
+        <p class="error">{{password_error}}</p>
+    <label for="Confirm_Password"> Confirm Password
+        <input id="Confirm_Password" type="Password" name="Confirm_Password" value="{{confirmpassword}}"/><br><br>
+    </label>
+        <p class="error">{{confirmpassword_error}}</p>
+    <label for="Email_Id"> Email Id
+        <input id="Email_Id" type="text" name="Email_Id" value="{{emailId}}"/><br><br>
+    </label>
+        <p class="error">{{emailId_error}}</p>
+        <input type="submit"/>
+    </form>
+
+{% block content %}
+
+{% if error %}
+<p class='error'>{{ error }}</p>
+{% endif %}
+    {% endblock %}
+</body>
+</html>
